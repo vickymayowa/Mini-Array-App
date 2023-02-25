@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="./bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/css/bootstrap.css">
+</head>
+<style>
+    body{
+        background-color: orangered;
+    }
+
+    input {
+       width: 60%;
+    }
+
+    #Head {
+        text-decoration: underline;
+    }
+    p{
+        color: beige;
+        font-style: italic;
+        font-size: 30px;
+        position: relative;
+        left: 19px;
+    }
+    select{
+        padding: 7px;
+        position: relative;
+        left: 79px;
+        border-radius: 5px;
+        top: 30px;
+    }
+    button{
+        padding: 10px;
+        background-color: orange;
+        color: black;
+        position: relative;
+        left: 69px;
+        top: 30px;
+        margin: 20px;
+        width: 104px;
+        border-radius: 10px;
+    }
+    .box {
+        width: 50%;
+        padding: 40px;
+    }
+    input{
+        left: 4px;
+        height: 30px;
+        border-radius: 10px;
+        position: relative;
+        width: 300px;
+    }
+
+    .container{
+        width: 300px;
+        height: 450px;
+        background-color: black;
+        border-radius: 20px;
+
+    }
+    @media (max-width:600px) {
+            .box {
+                width: 90%;
+                padding: 5px;
+            }
+            input {
+                width: 95%;
+            }
+            .container{
+                position: relative;
+                top: 45px;
+                left: 70px;
+                width: 320px;
+            }
+
+        }
+</style>
+<body>
+    <div class="box mx-auto my-5 shadow-lg text-center container">
+        <marquee behavior="" direction="" class="h1 text-white mt-3" style="font-size:40px; color:red;">Vicky Arrays Method </marquee>
+        <input type="text" id="display" value="" class="border-0 mt-5 p-2 pt-1 rounded-2">
+        <select name="" id="array" class="border-0 mt-5 p-2 pt-1 rounded-2" title="Select an array Method">
+            <option value="method">Select Method</option>
+            <option value="pop" id="pop">Pop</option>
+            <option value="push" id="push">Push</option>
+            <option value="shift" id="shift">Shift</option>
+            <option value="fill" id="fill">Fill</option>
+            <option value="reverse" id="reverse">Reverse</option>
+            <option value="sort" id="sort">Sort</option>
+            <option value="isArray" id="isArray">isArray</option>
+            <option value="unshift" id="unshift">Unshift</option>
+        </select><br>
+    <button class="btn btn-warning fw-bold text-primary mt-4" onclick="result()">Result</button><br>
+
+    <div class="rounded-pill w-75 bg-light bg-opacity-75 mx-auto my-5 text-primary fw-bold p-2">DETAILS: <br>
+        <p id="Head" class="d-inline"></p>
+    <p id="details" class="d-inline fw-semibold mb-3 text-primary"></p>
+    <p id="detail1" class="d-inline mb-3 text-danger fw-bold"></p>
+    </div>
+    </div>
+
+
+    <script>
+        let colours = ['Red', ' Blue', ' Green', ' Yellow', ' Orange', ' Purple']
+            display.value = colours
+            
+        function result() {
+        if (array.value == 'pop') {
+            colours.pop()
+            display.value = colours;
+            Head.innerText = pop.innerText
+            details.innerText = '- Removes the last element of an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'push') {
+            colours.push('Pink')
+            display.value = colours
+            Head.innerText = push.innerText
+            details.innerText = '- Adds new elements to the end of an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'shift') {
+            colours.shift()
+            display.value = colours
+            Head.innerText = shift.innerText
+            details.innerText = '- Removes the first element of an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'fill') {
+            colours.fill('Orange')
+            display.value = colours
+            Head.innerText = fill.innerText
+            details.innerText = 'Fill the elements in an array with a static value'
+            detail1.innerText =''
+        }
+        else if (array.value == 'reverse') {
+            colours.reverse()
+            display.value = colours
+            Head.innerText = reverse.innerText
+            details.innerText = '- Reverses the order of the elements in an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'sort') {
+            colours.sort()
+            display.value = colours
+            Head.innerText = sort.innerText
+            details.innerText = '- Sorts the elements of an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'isArray') {
+            display.value = Array.isArray(colours);
+            Head.innerText = isArray.innerText
+            details.innerText = '- Checks whether an object is an array'
+            detail1.innerText =''
+        }
+        else if (array.value == 'unshift') {
+            colours.unshift('Pink', 'Navy')
+            display.value = colours
+            Head.innerText = unshift.innerText
+            details.innerText = '- Adds new elements to the beginning of an array'
+            detail1.innerText =''
+        }
+        else {
+            display.value = colours
+            detail1.innerText = 'Please select an array method!!!'
+        }
+        
+        }
+    </script>
+    <script src="./bootstrap-5.2.0-dist/bootstrap-5.2.0-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
